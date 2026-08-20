@@ -14,7 +14,7 @@ config/name="TilesFantasy"
 run/main_scene="res://screens/initial_scene.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 boot_splash/bg_color=Color(0.121569, 0.133333, 0.203922, 1)
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [autoload]
 
@@ -30,6 +30,7 @@ window/handheld/orientation=1
 
 [gui]
 
+theme/custom="res://theme/theme_01.tres"
 theme/custom_font="res://assets/fonts/dungeon-437.png"
 
 [rendering]

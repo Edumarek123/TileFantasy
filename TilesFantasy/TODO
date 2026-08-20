@@ -2,20 +2,18 @@
 TODO:
 
 
-ok-Sistema de status 
-
-ok-Ficha base
-    >Infos gerais
-    >Profissao
-    >Grimorio  //
-    >Inventario //32 slots
-
 -Sistema batalha
+   >Envia a servidor o json: {"action" : "attack", "target" : 1, "modifier" : 0}
+   >Aguarda resposta
+
+-IA criaturas
+
 
 -Sistema mundo aberto:
     >Cidades
     >Zonas intermediarias
     >Zona primordial
+    >IA Mundo
 
 -Sistema de npcs
     >Comercios
@@ -28,7 +26,38 @@ ok-Ficha base
     >Artesao: arcos e tunicas
     >Encantamento: criacao de orbes e encantamento de itens
 
--IA criaturas
 
--IA Mundo
 
+ARTE:
+
+-Tela iformacoes personagem
+
+-Tela Inventario 16+armor+weapon
+
+-Ui em mundo aberto
+
+-Menu principal
+
+-Menu pause
+
+-Tela configuracoes
+
+-Tela creditos
+
+-Tela doacoes
+
+-Tela de crafts:
+    ferreiro
+    alquimista
+    artesao
+    encantamento
+
+-Tela de comercio
+
+-Popup dialogo
+
+-npcs
+
+-personagens principais mundo aberto x frames
+
+-monstros

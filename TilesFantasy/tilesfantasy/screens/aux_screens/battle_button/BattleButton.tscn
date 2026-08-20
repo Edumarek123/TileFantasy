@@ -1,47 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://boquiuavkiwki"]
+[gd_scene load_steps=3 format=3 uid="uid://boquiuavkiwki"]
 
-[ext_resource type="Texture2D" uid="uid://bv5n3ts2g77lb" path="res://assets/battle_ui/battle_btn.png" id="1_5ialu"]
 [ext_resource type="Script" path="res://screens/aux_screens/battle_button/battle_button.gd" id="1_q2xbo"]
-[ext_resource type="Texture2D" uid="uid://dwvwidwp4sout" path="res://assets/battle_ui/button_cursor.png" id="2_s3wmb"]
+[ext_resource type="Texture2D" uid="uid://k34ho4e7f37n" path="res://assets/misc_ui/cursor.png" id="2_ydwa3"]
 
-[node name="BattleButton" type="Node2D"]
+[node name="BattleButton" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_q2xbo")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_5ialu")
-centered = false
-hframes = 2
-
-[node name="cursor_right" type="Sprite2D" parent="."]
-position = Vector2(165, 18)
-texture = ExtResource("2_s3wmb")
-centered = false
-hframes = 2
-
 [node name="cursor_left" type="Sprite2D" parent="."]
-position = Vector2(-11, 18)
-texture = ExtResource("2_s3wmb")
+position = Vector2(-16, 4)
+texture = ExtResource("2_ydwa3")
 centered = false
-flip_h = true
 hframes = 2
+frame = 1
 
 [node name="Button" type="Button" parent="."]
-offset_left = 2.0
-offset_top = 2.0
-offset_right = 162.0
-offset_bottom = 54.0
+offset_right = 104.0
+offset_bottom = 24.0
+theme_override_font_sizes/font_size = 16
+text = "ACTION"
 flat = true
-
-[node name="SkillSprite" type="Sprite2D" parent="."]
-position = Vector2(10, 12)
-
-[node name="SkillName" type="Label" parent="."]
-offset_left = 40.0
-offset_top = 2.0
-offset_right = 162.0
-offset_bottom = 54.0
-theme_override_font_sizes/font_size = 8
-text = "Fireball"
-vertical_alignment = 1
+alignment = 0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
