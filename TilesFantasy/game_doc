@@ -1,0 +1,88 @@
+MMO mapa aberto batalha por turnos open pvp fora das cidades
+
+Disputa entre quatro regioes por recursos
+Teste de personalidade para decidir qual regiao vai pertencer
+Pode mudar apos 5 mortes
+Cada regiao possui seu proprio bioma e classe
+
+O recurso principal disputado sao cristais de alma, usados para tudo
+Cristal de Alma: Subir de nivel, craftar moeda de troca
+
+Nacao de Aco:
+Montanhas e vales com lagos
+Guerreiro que utilizam espadas, podem ser ferreiros
+Ataques: corte simples, multi-corte, aparar,  ataque final (1x inimigo), canalizar
+
+Nacao Arcana:
+Moram em ilhas voadoras
+Magos cujo utilizam aneis de poder, podem ser alquimistas
+Ataques: disparo elemento, tempestade de elemento, raio elemento,canalizar
+
+Nacao da Muralha:
+Moram numa muralha de gelo
+Rangers cujo utilizam arcos, podem ser artesoes
+Ataques: disparo rapido, disparo triplo, disparo de precisao, canalizar  
+
+Nacao da Alma:
+florestas
+Mestres encantadores domam criaturas para lutar ao seu lado, podem ser encantadores
+Ataques: qualquer ataque simples de qualquer arma, comanda ataques da criatura(s)
+Cristal de Alma: utilizado para curar criatura, orbe de captura para roubar essencia da criatura e melhorar criatura
+
+Zona Neutra:
+PVP desabilitado, utilizada para comercio entre nacoes
+Grande estacao de trem?
+
+Zonas Intermediarias:
+Gerenciadas pela IA, todos produtos e materiais dropam de monstros
+Ao sair da cidade entra nas zonas intermediarias cujo mudam diariamente e seus monstros se adaptam
+
+Boss Global:
+Nasce na dungeon do portal primordial
+Pode ser acessado 1x na semana ao ser conquistado no dia de batalha
+Nacoes tem 15 minutos para entrar no campo, apos isso a remanescente 2 minutos para entrar na dungeon
+Dungeon administrada pela IA
+
+Cidades:
+Casa de profissao (utilizado para melhoria da profissao)
+Casa de treinamento (utilizado para subir niveis)
+Mercado
+Camara do trono 
+Museu (historia da nacao)
+Biblioteca (Onde todo conhecimento e registros de jogadores e armazenado)
+Guilda(Players podem criar quests)
+
+Atributos Jogadores:
+Forca: dano fisico
+Destreza: acertos criticos, chance de acerto, chance de golpe bonus
+Intelecto: dano magico, maestria habilidades, resistencia magica
+Vitalidade: vida, resistencia fisica
+Alma: manipulacao de alma, multiplicador encantamento
+
+Atributos derivados:
+Vida
+Energia
+Poder
+Defesa fisica
+Defesa magica
+Chance de critico
+Chance de acerto
+Chance de ataque bonus
+Multiplicador encantamento
+Maestria de habilidades
+
+Estatisticas Jogadores:
+Nacao
+Nivel
+Cristais de Alma coletados
+Cristais de Alma
+Criaturas mortas
+Bosses derrotados
+Player mortos
+Duelos ganhos
+Titulo
+Horas jogadas
+Items criados
+Data criacao personagem
+Data morte
+

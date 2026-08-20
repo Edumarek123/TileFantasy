@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="TilesFantasy"
+run/main_scene="res://screens/initial_scene.tscn"
+config/features=PackedStringArray("4.3", "Mobile")
+boot_splash/bg_color=Color(0.121569, 0.133333, 0.203922, 1)
+config/icon="res://icon.svg"
+
+[autoload]
+
+BaseModifiersRules="*res://game_rules/base_modifiers_rules.gd"
+
+[display]
+
+window/size/viewport_width=360
+window/size/viewport_height=640
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
+window/handheld/orientation=1
+
+[gui]
+
+theme/custom_font="res://assets/fonts/dungeon-437.png"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.121569, 0.133333, 0.203922, 1)

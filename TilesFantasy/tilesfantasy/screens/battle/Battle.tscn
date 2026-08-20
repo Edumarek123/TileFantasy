@@ -1,0 +1,152 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpjyehkc5dvbg"]
+
+[ext_resource type="Texture2D" uid="uid://c8j353f68xhst" path="res://assets/battle_ui/background.png" id="1_ayehp"]
+[ext_resource type="Script" path="res://screens/battle/battle.gd" id="1_fwo25"]
+[ext_resource type="PackedScene" uid="uid://boquiuavkiwki" path="res://screens/aux_screens/battle_button/BattleButton.tscn" id="2_bqsgd"]
+[ext_resource type="Texture2D" uid="uid://k34ho4e7f37n" path="res://assets/misc_ui/cursor.png" id="4_ujtyp"]
+
+[node name="Battle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fwo25")
+
+[node name="backgroun" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_ayehp")
+
+[node name="buttons" type="Node2D" parent="."]
+visible = false
+
+[node name="BattleButton1" parent="buttons" instance=ExtResource("2_bqsgd")]
+position = Vector2(12, 457)
+is_left = true
+
+[node name="BattleButton2" parent="buttons" instance=ExtResource("2_bqsgd")]
+position = Vector2(184, 457)
+
+[node name="BattleButton3" parent="buttons" instance=ExtResource("2_bqsgd")]
+position = Vector2(12, 517)
+is_left = true
+
+[node name="BattleButton4" parent="buttons" instance=ExtResource("2_bqsgd")]
+position = Vector2(184, 517)
+
+[node name="BattleButton5" parent="buttons" instance=ExtResource("2_bqsgd")]
+position = Vector2(12, 577)
+is_left = true
+
+[node name="BattleButton6" parent="buttons" instance=ExtResource("2_bqsgd")]
+position = Vector2(184, 577)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_top = 64.0
+offset_right = 180.0
+offset_bottom = 464.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 359.0
+offset_right = 115.0
+offset_bottom = 367.0
+theme_override_colors/font_color = Color(0.121569, 0.133333, 0.203922, 1)
+theme_override_font_sizes/font_size = 8
+text = "JOGY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 35.0
+offset_top = 368.0
+offset_right = 115.0
+offset_bottom = 376.0
+theme_override_colors/font_color = Color(0.121569, 0.133333, 0.203922, 1)
+theme_override_font_sizes/font_size = 8
+text = "HP 120/120"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 35.0
+offset_top = 377.0
+offset_right = 115.0
+offset_bottom = 385.0
+theme_override_colors/font_color = Color(0.121569, 0.133333, 0.203922, 1)
+theme_override_font_sizes/font_size = 8
+text = "MP 120/120"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 45.0
+offset_top = 423.0
+offset_right = 141.0
+offset_bottom = 439.0
+theme_override_colors/font_color = Color(0.121569, 0.133333, 0.203922, 1)
+text = "Attack"
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 45.0
+offset_top = 445.0
+offset_right = 141.0
+offset_bottom = 461.0
+theme_override_colors/font_color = Color(0.121569, 0.133333, 0.203922, 1)
+text = "MAGIC"
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 45.0
+offset_top = 467.0
+offset_right = 141.0
+offset_bottom = 483.0
+theme_override_colors/font_color = Color(0.121569, 0.133333, 0.203922, 1)
+text = "Item"
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="."]
+offset_left = 45.0
+offset_top = 489.0
+offset_right = 141.0
+offset_bottom = 505.0
+theme_override_colors/font_color = Color(0.121569, 0.133333, 0.203922, 1)
+text = "Run"
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="."]
+offset_left = 45.0
+offset_top = 511.0
+offset_right = 141.0
+offset_bottom = 527.0
+theme_override_colors/font_color = Color(0.121569, 0.133333, 0.203922, 1)
+text = "Menu"
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(37, 431)
+texture = ExtResource("4_ujtyp")
+
+[node name="Label9" type="Label" parent="."]
+offset_left = 80.0
+offset_top = 12.0
+offset_right = 280.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.121569, 0.133333, 0.203922, 1)
+text = "Turn - 0004"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="buttons/BattleButton1" to="." method="_on_battle_button_1_pressed"]
+[connection signal="pressed" from="buttons/BattleButton2" to="." method="_on_battle_button_2_pressed"]
+[connection signal="pressed" from="buttons/BattleButton3" to="." method="_on_battle_button_3_pressed"]
+[connection signal="pressed" from="buttons/BattleButton4" to="." method="_on_battle_button_4_pressed"]
+[connection signal="pressed" from="buttons/BattleButton5" to="." method="_on_battle_button_5_pressed"]
+[connection signal="pressed" from="buttons/BattleButton6" to="." method="_on_battle_button_6_pressed"]
