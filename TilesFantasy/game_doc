@@ -15,7 +15,7 @@ Ataques: corte simples, multi-corte, aparar,  ataque final (1x inimigo), canaliz
 
 Nacao Arcana:
 Moram em ilhas voadoras
-Magos cujo utilizam aneis de poder, podem ser alquimistas
+Magos cujo utilizam varinhas, podem ser alquimistas
 Ataques: disparo elemento, tempestade de elemento, raio elemento,canalizar
 
 Nacao da Muralha:
@@ -85,4 +85,10 @@ Horas jogadas
 Items criados
 Data criacao personagem
 Data morte
+Tax
+
+Itens equipaveis:
+Arma
+Armadura
+Aneis
 

@@ -6,14 +6,19 @@ TODO:
    >Envia a servidor o json: {"action" : "attack", "target" : 1, "modifier" : 0}
    >Aguarda resposta
 
--IA criaturas
+-IA criaturas simples, mas sistema substituivel
 
 
 -Sistema mundo aberto:
+    [   
     >Cidades
     >Zonas intermediarias
     >Zona primordial
-    >IA Mundo
+    ]
+    >exploracao
+    
+    >IA Mundo, talvez ignorar e deixar para o fim
+
 
 -Sistema de npcs
     >Comercios
@@ -22,7 +27,7 @@ TODO:
 
 -Sistema Profissoes
     >Ferreiro: espadas e armaduras
-    >Alquimista: aneis e pocoes
+    >Alquimista: varinhas e pocoes
     >Artesao: arcos e tunicas
     >Encantamento: criacao de orbes e encantamento de itens
 
@@ -30,21 +35,9 @@ TODO:
 
 ARTE:
 
--Tela iformacoes personagem
+TELAS
 
 -Tela Inventario 16+armor+weapon
-
--Ui em mundo aberto
-
--Menu principal
-
--Menu pause
-
--Tela configuracoes
-
--Tela creditos
-
--Tela doacoes
 
 -Tela de crafts:
     ferreiro
@@ -52,12 +45,29 @@ ARTE:
     artesao
     encantamento
 
--Tela de comercio
+-Tela de criar quest
 
--Popup dialogo
+
+COISAS
 
 -npcs
 
 -personagens principais mundo aberto x frames
 
 -monstros
+
+ESPACOS
+
+-tilesets:
+
+
+
+
+
+POS PLAY TESTE
+
+-Tela Cutscenes
+
+-Tela doacoes, fazer contador doacoes ano para o jogo rodar
+
+-TELA DE LVL MAXIMO
