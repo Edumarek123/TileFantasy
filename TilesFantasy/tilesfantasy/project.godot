@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 [autoload]
 
 BaseModifiersRules="*res://game_rules/base_modifiers_rules.gd"
+ServerComms="*res://scripts/ServerComms.gd"
 
 [display]
 

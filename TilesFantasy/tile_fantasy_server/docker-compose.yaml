@@ -1,0 +1,14 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: dockerfile
+
+    container_name: tile_fantasy_server
+    restart: unless-stopped
+
+    ports:
+      - "27720:27720"
+
+    env_file:
+      - .env

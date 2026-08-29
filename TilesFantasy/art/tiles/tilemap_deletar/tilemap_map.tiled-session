@@ -1,0 +1,61 @@
+{
+    "activeFile": "stell_nation.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "grass_001.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 11
+        },
+        "road_001.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 16
+        },
+        "stell_nation.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 1307,
+                "y": 1333
+            }
+        },
+        "stell_nation.tmx#road_001": {
+            "scaleInDock": 1
+        },
+        "stone_001.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 23
+        },
+        "water.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 32
+        }
+    },
+    "last.exportedFilePath": "/home/dudu/Documents/projetos/GAME_DEV/TilesFantasy/art/tiles/tilemap_deletar",
+    "last.imagePath": "/home/dudu/Documents/projetos/GAME_DEV/TilesFantasy/art/tiles",
+    "map.height": 150,
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 150,
+    "openFiles": [
+        "stell_nation.tmx",
+        "road_001.tsx"
+    ],
+    "project": "tilemap_map.tiled-project",
+    "recentFiles": [
+        "road_001.tsx",
+        "stell_nation.tmx",
+        "stone_001.tsx",
+        "grass_001.tsx",
+        "water.tsx"
+    ],
+    "tileset.embedInMap": false,
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
