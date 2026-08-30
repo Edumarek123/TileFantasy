@@ -19,6 +19,10 @@ var last_selected = null
 var selected_index: int = 0
 
 
+func _ready() -> void:
+	comute_action(0)
+
+
 func comute_action(action : int):
 	match action:
 		0:

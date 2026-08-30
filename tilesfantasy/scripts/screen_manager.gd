@@ -4,9 +4,9 @@ const INITIAL_SCREEN = preload("res://screens/initial_scene.tscn")
 const LOGIN_SCREEN = preload("res://screens/login_screen/login_screen.tscn")
 const MENU_SCREEN = preload("res://screens/menu_screen/menu_screen.tscn")
 const LOADING_GAME_SCREEN = preload("res://screens/loading_game_screen/loadign_game_screen.tscn")
+const GAME_WORLD = preload("res://screens/world_screen/world_screen.tscn")
 
 #const FIND_GAME = preload("res://scenes/Menus/FindGame/FindGame.tscn")
-#const GAME_WORLD = preload("res://scenes/GameLoop/GameLoop.tscn")
 #const CONFIGURATION_SCREEN = preload("res://screens/configurations_screen/configurations_screen.tscn")
 
 
@@ -26,8 +26,7 @@ func change_screen(screenName : String, _args = null):
 		"LoadingGameScreen":
 			screen = LOADING_GAME_SCREEN.instantiate()	
 		"GameWorld":
-			#screen = GAME_WORLD.instantiate()
-			pass
+			screen = GAME_WORLD.instantiate()
 		"ConfigurationScreen":
 			#screen = CONFIGURATION_SCREEN.instantiate()
 			pass

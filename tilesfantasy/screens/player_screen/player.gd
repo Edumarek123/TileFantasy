@@ -6,8 +6,8 @@ var LAST_INPUT : Vector2 = Vector2.ZERO
 
 
 func _ready() -> void:
-	await ServerComms.login()
-
+	#await ServerComms.login()
+	pass
 
 func _process(delta):
 	if ServerComms.online_moving:

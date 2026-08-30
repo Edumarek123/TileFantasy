@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2h6xbd1ghnng"]
+[gd_scene load_steps=3 format=3 uid="uid://c2h6xbd1ghnng"]
 
-[ext_resource type="Texture2D" uid="uid://dfx03ho81e2mh" path="res://assets/world_ui/main_ui.png" id="1_hjrey"]
+[ext_resource type="Texture2D" uid="uid://cyfd1nyr5bt46" path="res://assets/menu_ui/world_ui.png" id="1_ex87n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c4lg"]
+bg_color = Color(0.992157, 0.992157, 0.992157, 1)
 
 [node name="WorldUi" type="Control"]
 layout_mode = 3
@@ -14,49 +17,50 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 360.0
 offset_bottom = 640.0
-texture = ExtResource("1_hjrey")
+texture = ExtResource("1_ex87n")
 
 [node name="PlayerName" type="Label" parent="ui"]
 layout_mode = 0
-offset_left = 92.0
-offset_top = 7.0
-offset_right = 200.0
-offset_bottom = 15.0
+offset_left = 49.0
+offset_top = 18.0
+offset_right = 157.0
+offset_bottom = 26.0
 theme_override_font_sizes/font_size = 8
-text = "Lore Ipsum"
+text = "Dorian Yellow"
 
 [node name="Title" type="Label" parent="ui"]
 layout_mode = 0
-offset_left = 93.0
-offset_top = 19.0
-offset_right = 173.0
-offset_bottom = 27.0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 130.0
+offset_bottom = 38.0
 theme_override_font_sizes/font_size = 8
-text = "Title"
+text = "Crook"
 
 [node name="Level" type="Label" parent="ui"]
 layout_mode = 0
-offset_left = 93.0
-offset_top = 31.0
-offset_right = 173.0
-offset_bottom = 39.0
+offset_left = 50.0
+offset_top = 42.0
+offset_right = 130.0
+offset_bottom = 50.0
 theme_override_font_sizes/font_size = 8
 text = "Lv. 001"
 
 [node name="MapName" type="Label" parent="ui"]
 layout_mode = 0
-offset_left = 203.0
-offset_right = 355.0
-offset_bottom = 8.0
+offset_left = 200.0
+offset_right = 352.0
+offset_bottom = 11.0
 theme_override_font_sizes/font_size = 8
-text = "Lore Ipsum"
+theme_override_styles/normal = SubResource("StyleBoxFlat_4c4lg")
+text = "Stell City"
 horizontal_alignment = 1
 
 [node name="MapE" type="Label" parent="ui"]
 layout_mode = 0
-offset_left = 200.0
+offset_left = 197.0
 offset_top = 46.0
-offset_right = 208.0
+offset_right = 205.0
 offset_bottom = 54.0
 theme_override_font_sizes/font_size = 8
 text = "E"
@@ -64,9 +68,9 @@ horizontal_alignment = 1
 
 [node name="MapL" type="Label" parent="ui"]
 layout_mode = 0
-offset_left = 350.0
+offset_left = 347.0
 offset_top = 46.0
-offset_right = 358.0
+offset_right = 355.0
 offset_bottom = 54.0
 theme_override_font_sizes/font_size = 8
 text = "L"
@@ -74,20 +78,20 @@ horizontal_alignment = 1
 
 [node name="MapN" type="Label" parent="ui"]
 layout_mode = 0
-offset_left = 278.0
-offset_top = 7.0
-offset_right = 286.0
-offset_bottom = 15.0
+offset_left = 273.0
+offset_top = 9.0
+offset_right = 281.0
+offset_bottom = 17.0
 theme_override_font_sizes/font_size = 8
 text = "N"
 horizontal_alignment = 1
 
 [node name="MapS" type="Label" parent="ui"]
 layout_mode = 0
-offset_left = 279.0
-offset_top = 84.0
-offset_right = 287.0
-offset_bottom = 92.0
+offset_left = 273.0
+offset_top = 115.0
+offset_right = 281.0
+offset_bottom = 123.0
 theme_override_font_sizes/font_size = 8
 text = "S"
 horizontal_alignment = 1

@@ -32,10 +32,10 @@
             "scaleInEditor": 32
         }
     },
-    "last.exportedFilePath": "/home/dudu/Documents/projetos/GAME_DEV/TilesFantasy/art/tiles/tilemap_deletar",
+    "last.exportedFilePath": "/home/dudu/Documents/projetos/GAME_DEV/TileFantasy/art/tiles/tilemap_deletar",
     "last.imagePath": "/home/dudu/Documents/projetos/GAME_DEV/TilesFantasy/art/tiles",
     "map.height": 150,
-    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
+    "map.lastUsedExportFilter": "CSV files (*.csv)",
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
     "map.tileWidth": 16,

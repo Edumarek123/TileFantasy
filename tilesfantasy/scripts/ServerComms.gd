@@ -11,6 +11,7 @@ var players := {}
 var TOKEN := ""
 var online_moving : bool = false
 
+signal update_region
 
 func _ready():
 	REQUEST.timeout = 5
@@ -85,7 +86,7 @@ func receive_messages():
 			continue
 
 		if message.get("type") == "positions":
-			print(message)
+			#print(message)
 			update_positions(message["players"])
 
 #----------------#WEBSOCKET#----------------#
@@ -97,6 +98,5 @@ func update_positions(position_list):
 
 		players[player_id] = position
 		
-		#print(players)
-		
+	update_region.emit()
 	

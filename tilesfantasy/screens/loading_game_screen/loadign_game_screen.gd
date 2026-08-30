@@ -9,6 +9,4 @@ func connect_to_world():
 	
 	if response:
 		print("conectado")
-
-	#carregar mundo?
-	#sei la
+		ScreenManager.change_screen("GameWorld")

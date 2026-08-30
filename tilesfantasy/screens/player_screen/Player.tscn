@@ -1,11 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnu06ye8btsyq"]
+[gd_scene load_steps=4 format=3 uid="uid://dnu06ye8btsyq"]
 
 [ext_resource type="Texture2D" uid="uid://xd712uhnw7eh" path="res://assets/characteres/Sprite-0001.png" id="1_qmef2"]
 [ext_resource type="Script" path="res://screens/player_screen/player.gd" id="1_unl6q"]
+[ext_resource type="PackedScene" uid="uid://c2h6xbd1ghnng" path="res://screens/world_ui/WorldUI.tscn" id="3_tl18a"]
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_unl6q")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 2400
+limit_bottom = 2400
+limit_smoothed = true
+position_smoothing_enabled = true
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_qmef2")
 centered = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WorldUi" parent="CanvasLayer" instance=ExtResource("3_tl18a")]
