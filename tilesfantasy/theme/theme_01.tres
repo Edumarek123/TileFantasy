@@ -1,0 +1,78 @@
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://ctor7nxf3i0d3"]
+
+[ext_resource type="FontFile" uid="uid://bqm3v1fwu2n71" path="res://assets/fonts/dungeon-437.png" id="1_qgms3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4phxg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uc2ts"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nd8bm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ctkvq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85smi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vln3f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f5psq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_of0f3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cwcml"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eph5v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qo8is"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mus4y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ta8y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nm4en"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2upd"]
+
+[resource]
+default_font_size = 8
+Button/colors/font_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+Button/colors/font_hover_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+Button/colors/font_hover_pressed_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+Button/colors/font_outline_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+Button/colors/font_pressed_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+Button/colors/icon_hover_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+Button/colors/icon_hover_pressed_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+Button/colors/icon_normal_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+Button/colors/icon_pressed_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_4phxg")
+Button/styles/disabled_mirrored = SubResource("StyleBoxEmpty_uc2ts")
+Button/styles/focus = SubResource("StyleBoxEmpty_nd8bm")
+Button/styles/hover = SubResource("StyleBoxEmpty_ctkvq")
+Button/styles/hover_mirrored = SubResource("StyleBoxEmpty_85smi")
+Button/styles/hover_pressed = SubResource("StyleBoxEmpty_vln3f")
+Button/styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_f5psq")
+Button/styles/normal = SubResource("StyleBoxEmpty_of0f3")
+Button/styles/normal_mirrored = SubResource("StyleBoxEmpty_cwcml")
+Button/styles/pressed = SubResource("StyleBoxEmpty_eph5v")
+Button/styles/pressed_mirrored = SubResource("StyleBoxEmpty_qo8is")
+Label/colors/font_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+Label/colors/font_outline_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/fonts/font = ExtResource("1_qgms3")
+Label/styles/normal = SubResource("StyleBoxEmpty_mus4y")
+LineEdit/colors/caret_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+LineEdit/colors/font_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+LineEdit/colors/font_placeholder_color = Color(0.135617, 0.135617, 0.135617, 1)
+LineEdit/colors/font_selected_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+LineEdit/font_sizes/font_size = 8
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_7ta8y")
+LineEdit/styles/normal = SubResource("StyleBoxEmpty_nm4en")
+LineEdit/styles/read_only = SubResource("StyleBoxEmpty_e2upd")

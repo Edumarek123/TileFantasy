@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddp444kqc7dl6"]
+
+[ext_resource type="Script" path="res://screens/aux_screens/menu_button/menu_button.gd" id="1_2bk3t"]
+[ext_resource type="Texture2D" uid="uid://xto7a32mp358" path="res://assets/menu_ui/menu_button.png" id="1_rlsus"]
+
+[node name="MenuButton" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -360.0
+offset_bottom = -640.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2bk3t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rlsus")
+centered = false
+hframes = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 32.0
+text = "button"
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
