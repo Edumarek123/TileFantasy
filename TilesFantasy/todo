@@ -1,7 +1,20 @@
 PROGRAMMING -------------------------------------------------------
 
+-Sistema de login -> menu -> play -> load -> mundo
+
 -Sistema de movimentação no mundo websockets
+	>popular regiao
+	>mover-se
+	>sincronizar
+	>verificar possibilidade de anti-lag
+
+	>troca de regioes
+
 -Chat
+	>Tabela de chat global
+	>Tabela de chat da nacao
+	>Tabela de chat da party
+
 -Sistema mundo aberto:
 >Cidades
 >Zonas intermediarias

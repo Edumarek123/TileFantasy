@@ -1,0 +1,83 @@
+CREATE DATABASE IF NOT EXISTS tile_fantasy_db;
+CREATE USER 'gateway_server1'@'%'
+IDENTIFIED BY 'secret123';
+GRANT ALL PRIVILEGES ON tile_fantasy_db.* TO 'gateway_server1'@'%';
+FLUSH PRIVILEGES;
+USE tile_fantasy_db;
+
+
+CREATE TABLE IF NOT EXISTS player_data (
+
+    -- =========================================================
+    -- IDENTIFICATION
+    -- =========================================================
+
+    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    player_id VARCHAR(22) NOT NULL,
+    username VARCHAR(32) NOT NULL,
+    password VARCHAR(32) NOT NULL,
+
+    PRIMARY KEY (id),
+    UNIQUE KEY unique_playerID (player_id),
+    UNIQUE KEY unique_username (username),
+
+    -- =========================================================
+    -- CHARACTER
+    -- =========================================================
+
+    name VARCHAR(32) NOT NULL,
+    nation VARCHAR(32) NOT NULL,
+    level INT UNSIGNED NOT NULL DEFAULT 1,
+    title VARCHAR(64) NOT NULL DEFAULT '',
+    character_creation_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    death_date DATETIME NULL,
+
+    -- =========================================================
+    -- PROGRESSION & RESOURCES
+    -- =========================================================
+
+    soul_crystals_collected BIGINT UNSIGNED NOT NULL DEFAULT 0,
+    soul_crystals BIGINT UNSIGNED NOT NULL DEFAULT 0,
+    hours_played BIGINT UNSIGNED NOT NULL DEFAULT 0,
+    items_crafted BIGINT UNSIGNED NOT NULL DEFAULT 0,
+    quests_created BIGINT UNSIGNED NOT NULL DEFAULT 0,
+    quests_completed BIGINT UNSIGNED NOT NULL DEFAULT 0,
+
+    -- =========================================================
+    -- COMBAT STATS
+    -- =========================================================
+
+    creatures_killed BIGINT UNSIGNED NOT NULL DEFAULT 0,
+    bosses_defeated BIGINT UNSIGNED NOT NULL DEFAULT 0,
+    players_killed BIGINT UNSIGNED NOT NULL DEFAULT 0,
+    duels_won BIGINT UNSIGNED NOT NULL DEFAULT 0,
+
+    -- =========================================================
+    -- DATA STRUCTURES
+    -- =========================================================
+
+    inventory JSON NOT NULL DEFAULT ('{}'),
+    grimoire JSON NOT NULL DEFAULT ('{}'),
+    profession JSON NOT NULL DEFAULT ('{}'),
+
+    -- =========================================================
+    -- GAME
+    -- =========================================================
+
+    positionX FLOAT NOT NULL DEFAULT 0,
+    positionY FLOAT NOT NULL DEFAULT 0,
+    positionR VARCHAR(32) NOT NULL DEFAULT '',
+    last_update DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    inbox JSON NOT NULL DEFAULT ('{}')
+
+    -- =========================================================
+    -- ATTRIBUTES
+    -- =========================================================
+
+    strength INT UNSIGNED NOT NULL DEFAULT 1,
+    dexterity INT UNSIGNED NOT NULL DEFAULT 1,
+    intellect INT UNSIGNED NOT NULL DEFAULT 1,
+    vitality INT UNSIGNED NOT NULL DEFAULT 1,
+    soul INT UNSIGNED NOT NULL DEFAULT 1
+
+);

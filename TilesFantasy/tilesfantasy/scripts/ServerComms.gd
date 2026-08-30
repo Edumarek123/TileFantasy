@@ -47,7 +47,7 @@ func make_request(address : String, payload : String):
 
 #----------------#LOGIN#----------------#
 func login():
-	var payload = JSON.stringify({"token" : "1", "payload": {"username": "admin", "password": "123", "version": "0.0.1"}})
+	var payload = JSON.stringify({"token" : "1", "payload": {"username": "teste1", "password": "123", "version": "0.0.1"}})
 
 	var response = await make_request(SERVER_URL + "/login", payload)
 	var code = response[1]

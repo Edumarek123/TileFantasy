@@ -1,30 +1,32 @@
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from jose import JWTError
+
 from app.auth.auth import verify_token_ws
 from app.game.game_loop import players
+from app.database.database import get_player_location_db
 
 router = APIRouter()
 
-#----------------#Websocket#----------------#
+BASE_SPEED : float = 50.0
 
+#----------------#Websocket#----------------#
 @router.websocket("/ws")
 async def websocket_movement(websocket: WebSocket):
     await websocket.accept()
 
-    username = None
+    player_id = None
 
     try:
         token = websocket.query_params.get("token")
-        print(token)
 
         if token is None:
             await websocket.close(code=1008)
             return
 
         try:
-            username : str = verify_token_ws(token)
+            player_id : str = verify_token_ws(token)
 
-            if username is None:
+            if player_id is None:
                 await websocket.close(code=1008)
                 return
 
@@ -34,23 +36,21 @@ async def websocket_movement(websocket: WebSocket):
 
 
         #consultar no banco de dados ultima posicao
-        players[username] = {
-
+        x, y, r = get_player_location_db(player_id)
+        players[player_id] = {
             "websocket": websocket,
 
-            "region" : "steel_city",
-
-            "x": 100.0,
-            "y": 100.0,
+            "x": x,
+            "y": y,
+            "r" : r,
 
             "input_x": 0,
             "input_y": 0,
-
-            "speed": 50.0
+            "speed": BASE_SPEED
         }
 
 
-        print(f"Player {username} connected")
+        print(f"Player {player_id} connected")
 
 
         #Aguarda receber inputs
@@ -66,16 +66,16 @@ async def websocket_movement(websocket: WebSocket):
             input_x = max(-1, min(1, input_x))
             input_y = max(-1, min(1, input_y))
 
-            players[username]["input_x"] = input_x
-            players[username]["input_y"] = input_y
+            players[player_id]["input_x"] = input_x
+            players[player_id]["input_y"] = input_y
 
 
     except WebSocketDisconnect:
 
-        if username is not None:
+        if player_id is not None:
 
-            players.pop(username, None)
+            players.pop(player_id, None)
 
-            print(f"Player {username} disconnected")
+            print(f"Player {player_id} disconnected")
 
 
