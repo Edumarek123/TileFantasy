@@ -10,3 +10,5 @@ script = ExtResource("1_el5on")
 [node name="RegionBuilder" parent="." instance=ExtResource("1_qq4bf")]
 
 [node name="Player" parent="." instance=ExtResource("4_hejhs")]
+
+[node name="Players" type="Node2D" parent="."]

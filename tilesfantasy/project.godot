@@ -21,6 +21,7 @@ config/icon="res://icon.png"
 BaseModifiersRules="*res://game_rules/base_modifiers_rules.gd"
 ServerComms="*res://scripts/ServerComms.gd"
 ScreenManager="*res://scripts/screen_manager.gd"
+GlobalInfo="*res://scripts/global_info.gd"
 
 [display]
 

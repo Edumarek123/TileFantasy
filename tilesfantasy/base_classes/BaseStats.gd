@@ -111,3 +111,26 @@ func focus_set(value : int) -> void:
 func weapon_type_set(value : int) -> void:
 	weapon_type = value
 	
+func print_stats() -> void:
+	print("//--------- BASE STATS ---------//")
+	print("strength: ", strength)
+	print("dexterity: ", dexterity)
+	print("intellect: ", intellect)
+	print("vitality: ", vitality)
+	print("soul: ", soul)
+
+	print("//--------- DERIVED STATS ---------//")
+	print("health: ", health)
+	print("mana: ", mana)
+	print("power: ", power)
+	print("defense_physic: ", defense_physic)
+	print("defense_magic: ", defense_magic)
+	print("precision: ", precision)
+	print("critical_chance: ", critical_chance)
+	print("bonus_attack_chance: ", bonus_attack_chance)
+	print("enchant_multiplier: ", enchant_multiplier)
+	print("skill_mastery: ", skill_mastery)
+
+	print("//--------- AUX STATS ---------//")
+	print("focus: ", focus)
+	print("weapon_type: ", weapon_type)

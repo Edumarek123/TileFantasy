@@ -55,14 +55,27 @@ func login(user : String, password : String) -> int:
 	var code = response[1]
 
 	if code != 200:
-		print("Login falhou: ", code)
+		print("Login failed: ", code)
 		return code
 
 	var data = JSON.parse_string(response[3].get_string_from_utf8())
 	TOKEN = data["token"]
 	
 	return code
+
+func get_charactere_sheet() -> Dictionary:
+	var payload = JSON.stringify({"token" : TOKEN, "payload": {}})
+
+	var response = await make_request(SERVER_URL + "/get_charactere_sheet", payload)
+	var code = response[1]
+
+	if code != 200:
+		print("Sheet failed: ", code)
+		return code
+
+	var data = JSON.parse_string(response[3].get_string_from_utf8())
 	
+	return data
 
 #----------------#WEBSOCKET#----------------#
 func connect_websocket() -> bool:
@@ -97,6 +110,5 @@ func update_positions(position_list):
 		var position = Vector2(player_data["x"], player_data["y"])
 
 		players[player_id] = position
-		
 	update_region.emit()
 	

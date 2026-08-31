@@ -118,3 +118,16 @@ def get_player_id_db(username : str) -> str:
 
     return response[0][0]
 
+def get_charactere_sheet_db(player_id: str) -> dict:
+    conn = connect_database()
+    instruction = "SELECT player_id, name, nation, level, title, character_creation_date, death_date, soul_crystals_collected, soul_crystals, hours_played, items_crafted, quests_created, quests_completed, creatures_killed, bosses_defeated, players_killed, duels_won, inventory, grimoire, profession, inbox, strength, dexterity, intellect, vitality, soul FROM player_data WHERE player_id = ?;"
+    response = run_instruction_database(instruction, (player_id,), conn)
+    disconnect_database(conn)
+
+    if not response:
+        return {}
+
+    row = response[0]
+    sheet = {"player_id": row[0], "name": row[1], "nation": row[2], "level": row[3], "title": row[4], "character_creation_date": str(row[5]) if row[5] else "", "death_date": str(row[6]) if row[6] else "", "soul_crystals_collected": row[7], "soul_crystals": row[8], "hours_played": row[9], "items_crafted": row[10], "quests_created": row[11], "quests_completed": row[12], "creatures_killed": row[13], "bosses_defeated": row[14], "players_killed": row[15], "duels_won": row[16], "inventory": json.loads(row[17]) if row[17] else {}, "grimoire": json.loads(row[18]) if row[18] else {}, "profession": json.loads(row[19]) if row[19] else {}, "inbox": json.loads(row[20]) if row[20] else {}, "base_stats": {"strength": row[21], "dexterity": row[22], "intellect": row[23], "vitality": row[24], "soul": row[25]}}
+
+    return sheet

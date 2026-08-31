@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4ofdw6u6ktpy"]
+
+[ext_resource type="Script" path="res://screens/aux_screens/player_dummys/player_dummys.gd" id="1_18wqu"]
+[ext_resource type="Texture2D" uid="uid://xd712uhnw7eh" path="res://assets/characteres/Sprite-0001.png" id="2_7lnh7"]
+
+[node name="PlayerDummys" type="Node2D"]
+script = ExtResource("1_18wqu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7lnh7")
+centered = false

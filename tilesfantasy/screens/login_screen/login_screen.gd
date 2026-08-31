@@ -5,10 +5,20 @@ extends Control
 @onready var password_entry: LineEdit = $PasswordEntry
 @onready var error_lb: Label = $ErrorLB
 
+func get_argument(args: PackedStringArray, argument: String, default_value: String) -> String:
+	var index := args.find(argument)
+
+	if index != -1 and index + 1 < args.size():
+		return args[index + 1]
+
+	return default_value
 
 func _ready() -> void:
 	#deletar
-	email_entry.text = "teste1"
+	#email_entry.text = "teste1"
+	var args := OS.get_cmdline_args()
+	email_entry.text = get_argument(args, "--username", "teste1")
+	print(email_entry.text)
 	password_entry.text = "123"
 	_on_login_btn_pressed()
 	
@@ -21,7 +31,6 @@ func display_error(error : String):
 
 
 func _on_login_btn_pressed() -> void:
-	
 	var user :  String = email_entry.text
 	var password :  String = password_entry.text
 	
@@ -29,6 +38,10 @@ func _on_login_btn_pressed() -> void:
 	
 	match response:
 		200:
+			var sheet : Dictionary = await ServerComms.get_charactere_sheet()
+			GlobalInfo.CHAR_SHEET.load_charactere(sheet)
+			#GlobalInfo.CHAR_SHEET.print_sheet()
+			
 			ScreenManager.change_screen("MenuScreen")
 		_:
 			var err = "Login error code: " + str(response)

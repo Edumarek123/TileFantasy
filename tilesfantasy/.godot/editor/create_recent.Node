@@ -1,12 +1,12 @@
-Camera2D
 Node2D
+Sprite2D
+Camera2D
 CanvasLayer
 TileMapLayer
 TextureRect
 Label
 Control
 Button
-Sprite2D
 LineEdit
 RichTextLabel
 ColorRect

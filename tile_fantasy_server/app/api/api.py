@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from app.schemas.schemas import Token
 from app.auth.auth import create_access_token, verify_token
 from app.config.config import GAME_VERSION
-from app.database.database import  check_credentials_db, get_player_id_db
+from app.database.database import  check_credentials_db, get_player_id_db, get_charactere_sheet_db
 
 router = APIRouter()
 
@@ -33,10 +33,19 @@ def login(token: Token):
 #----------------#Actions#----------------#
 @router.post("/data")
 def receive_data(token : Token):  
-    username : str = verify_token(token.token)
+    player_id : str = verify_token(token.token)
 
     print(token.payload)
 
-    return {"success": True, "user": username, "data": token}
+    return {"success": True, "player_id": player_id, "data": token}
+
+
+@router.post("/get_charactere_sheet")
+def get_charactere_sheet(token : Token):  
+    player_id : str = verify_token(token.token)
+
+    sheet = get_charactere_sheet_db(player_id)
+
+    return sheet
 
 
