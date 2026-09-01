@@ -12,7 +12,7 @@ func generate_map(json_data: Dictionary, region: String) -> void:
 		push_error("Região não encontrada: " + region)
 		return
 
-	var map_data: Dictionary = json_data[region]
+	var map_data: Dictionary = json_data[region]["map"]
 
 	ground_layer.clear()
 

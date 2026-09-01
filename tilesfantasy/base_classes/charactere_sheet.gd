@@ -29,6 +29,9 @@ class_name CharactereSheet
 @export var grimoire : Dictionary = {}
 @export var profession : Dictionary = {}
 @export var inbox : Dictionary = {}
+@export var positionX : float = 0.0
+@export var positionY : float = 0.0
+@export var positionR : String = ""
 
 #----------------#BASE STATS#----------------#
 @export var base_stats : BaseStats

@@ -1,19 +1,19 @@
 PROGRAMMING -------------------------------------------------------
 
--Sistema de load -> mundo
 
 -Sistema de movimentação no mundo websockets
-	>popular regiao
-	>mover-se
-	>sincronizar
-	>verificar possibilidade de anti-lag
-
 	>troca de regioes
 
 -Chat
 	>Tabela de chat global
 	>Tabela de chat da nacao
 	>Tabela de chat da party
+
+-Sistema batalha
+>Envia a servidor o json: {"action" : "attack", "target" : 1, "modifier" : 0}
+>Aguarda resposta
+>IA criaturas simples, mas sistema substituível
+
 
 -Sistema mundo aberto:
 >Cidades
@@ -24,10 +24,6 @@ PROGRAMMING -------------------------------------------------------
 
 -Sistema de interação com npcs (dialogo)
 
--Sistema batalha
->Envia a servidor o json: {"action" : "attack", "target" : 1, "modifier" : 0}
->Aguarda resposta
->IA criaturas simples, mas sistema substituível
 
 -Sistema de compra / venda npc
 -Sistema de Crafts npc
@@ -52,6 +48,10 @@ PROGRAMMING -------------------------------------------------------
 ART  -------------------------------------------------------
 
 TELAS
+
+
+-Tela Login
+-Tela Registro
 
 -Tela Cutscenes
 -Tela Criaçao personagem + quiz

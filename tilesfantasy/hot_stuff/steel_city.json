@@ -1,5 +1,20 @@
 {
   "steel_city": {
+      "size" : [64, 64],
+  
+  "teleports": [
+    {
+      "id" : "north_gate",
+      "x" : 10,
+      "y" : 10,
+      "w" : 2,
+      "h" : 2,
+      "target" : "steel_city",
+      "target_x" : 10,
+      "target_y" : 10
+  }
+  ],
+  "map" : {
     "0": [
       5,
       2,
@@ -16641,4 +16656,4 @@
       0
     ]
   }
-}
+}}

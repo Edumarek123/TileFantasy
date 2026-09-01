@@ -1,5 +1,6 @@
 from fastapi import APIRouter, WebSocket, WebSocketDisconnect
 from jose import JWTError
+import math
 
 from app.auth.auth import verify_token_ws
 from app.game.game_loop import players
@@ -7,7 +8,21 @@ from app.database.database import get_player_location_db
 
 router = APIRouter()
 
-BASE_SPEED : float = 50.0
+
+
+#----------------#Trata Inputs#----------------#
+def normalize_input(x: float, y: float):
+
+    x = max(-1.0, min(1.0, x))
+    y = max(-1.0, min(1.0, y))
+
+    length = math.sqrt(x * x + y * y)
+
+    if length > 1.0:
+        x /= length
+        y /= length
+
+    return x, y
 
 #----------------#Websocket#----------------#
 @router.websocket("/ws")
@@ -35,7 +50,6 @@ async def websocket_movement(websocket: WebSocket):
             return
 
 
-        #consultar no banco de dados ultima posicao
         x, y, r = get_player_location_db(player_id)
         players[player_id] = {
             "websocket": websocket,
@@ -46,12 +60,9 @@ async def websocket_movement(websocket: WebSocket):
 
             "input_x": 0,
             "input_y": 0,
-            "speed": BASE_SPEED
         }
 
-
         print(f"Player {player_id} connected")
-
 
         #Aguarda receber inputs
         while True:
@@ -60,22 +71,13 @@ async def websocket_movement(websocket: WebSocket):
             if data.get("type") != "input":
                 continue
 
-            input_x = data.get("x", 0)
-            input_y = data.get("y", 0)
-
-            input_x = max(-1, min(1, input_x))
-            input_y = max(-1, min(1, input_y))
-
+            input_x, input_y = normalize_input(data.get("x", 0), data.get("y", 0))
             players[player_id]["input_x"] = input_x
             players[player_id]["input_y"] = input_y
 
-
     except WebSocketDisconnect:
-
         if player_id is not None:
-
             players.pop(player_id, None)
-
             print(f"Player {player_id} disconnected")
 
 

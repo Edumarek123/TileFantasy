@@ -6,12 +6,16 @@ extends Node2D
 @onready var players: Node2D = $Players
 
 var target_position: Vector2
+var region : String = ""
 var players_nodes: Dictionary = {}
 
 
 func _ready() -> void:
-	var map : Dictionary = load_map_json("res://hot_stuff/steel_city.json")
-	region_builder.generate_map(map, "steel_city")
+	region = GlobalInfo.CHAR_SHEET.positionR
+	var map : Dictionary = load_map_json(region)
+	player.position = Vector2(GlobalInfo.CHAR_SHEET.positionX, GlobalInfo.CHAR_SHEET.positionY)
+
+	region_builder.generate_map(map, region)
 	ServerComms.update_region.connect(update_region)
 	
 
@@ -25,11 +29,21 @@ func _process(delta):
 			16.0 * delta
 		)	
 
+func change_region(new_region : String):
+	var map : Dictionary = load_map_json(new_region)
+	region_builder.generate_map(map, new_region)
+	region = new_region
+	
+
 func update_region() -> void:
 	#Player
 	var player_id = GlobalInfo.CHAR_SHEET.player_id
 	var player_data = ServerComms.players[player_id]
-	target_position = Vector2(player_data[0], player_data[1])
+	
+	if region != player_data["r"]:
+		change_region(player_data["r"])
+		
+	target_position = Vector2(player_data["p"][0], player_data["p"][1])
 
 	#Dummys	
 	for p in ServerComms.players:
@@ -37,7 +51,7 @@ func update_region() -> void:
 			continue
 
 		var data = ServerComms.players[p]
-		var pos = Vector2(data[0], data[1])
+		var pos = Vector2(data["p"][0], data["p"][1])
 
 		if not players_nodes.has(p):
 			create_dummy(p, pos)
@@ -62,7 +76,8 @@ func check_removed_dummy() -> void:
 			players_nodes.erase(p)
 
 
-func load_map_json(path: String) -> Dictionary:
+func load_map_json(region: String) -> Dictionary:
+	var path : String = "res://hot_stuff/" + region + ".json"
 	var file := FileAccess.open(path, FileAccess.READ)
 
 	if file == null:

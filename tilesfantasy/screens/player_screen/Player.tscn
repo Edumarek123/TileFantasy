@@ -22,3 +22,4 @@ centered = false
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="WorldUi" parent="CanvasLayer" instance=ExtResource("3_tl18a")]
+visible = false

@@ -104,11 +104,13 @@ func receive_messages():
 
 #----------------#WEBSOCKET#----------------#
 func update_positions(position_list):
-
+	players.clear()
+	
 	for player_data in position_list:
 		var player_id = player_data["player_id"]
 		var position = Vector2(player_data["x"], player_data["y"])
+		var region = player_data["r"]
 
-		players[player_id] = position
+		players[player_id] = {"p" : position, "r" : region}
 	update_region.emit()
 	
