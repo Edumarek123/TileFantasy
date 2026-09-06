@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://malnvqqndp1u"]
+
+[ext_resource type="Texture2D" uid="uid://dv6nmpato1w6j" path="res://assets/menu_ui/dialog_screen.png" id="1_aqvr0"]
+[ext_resource type="Script" path="res://screens/dialog_screen/dialog_screen.gd" id="1_gni3c"]
+[ext_resource type="PackedScene" uid="uid://boquiuavkiwki" path="res://screens/aux_screens/battle_button/BattleButton.tscn" id="3_g2kab"]
+
+[node name="DialogScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gni3c")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_aqvr0")
+
+[node name="NpcLBs" type="Control" parent="."]
+anchors_preset = 0
+
+[node name="NpcTypeLB" type="Label" parent="NpcLBs"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 90.0
+offset_right = 211.0
+offset_bottom = 106.0
+theme_override_font_sizes/font_size = 16
+text = "Npc Type"
+
+[node name="NpcNameLB" type="Label" parent="NpcLBs"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 114.0
+offset_right = 147.0
+offset_bottom = 122.0
+text = "Npc Name"
+
+[node name="NpcNationLB" type="Label" parent="NpcLBs"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 126.0
+offset_right = 147.0
+offset_bottom = 134.0
+text = "Nation"
+
+[node name="NpcLevelLB" type="Label" parent="NpcLBs"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 138.0
+offset_right = 147.0
+offset_bottom = 146.0
+text = "Level 99"
+
+[node name="NpcFrame" type="Sprite2D" parent="."]
+position = Vector2(15, 90)
+
+[node name="NpcIcon" type="Sprite2D" parent="."]
+position = Vector2(312, 96)
+centered = false
+
+[node name="NpcScript" type="Label" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 187.0
+offset_right = 341.0
+offset_bottom = 381.0
+theme_override_font_sizes/font_size = 16
+text = "Script."
+autowrap_mode = 3
+clip_text = true
+
+[node name="DialogSentence" type="Label" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 401.0
+offset_right = 341.0
+offset_bottom = 493.0
+theme_override_font_sizes/font_size = 16
+text = "What are you going to do?"
+autowrap_mode = 3
+clip_text = true
+
+[node name="SentencesControls" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 30.0
+offset_top = 493.0
+offset_right = 30.0
+offset_bottom = 493.0
+
+[node name="BattleButton01" parent="SentencesControls" instance=ExtResource("3_g2kab")]

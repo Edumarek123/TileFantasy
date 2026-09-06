@@ -78,17 +78,6 @@ func check_removed_dummy() -> void:
 
 func load_map_json(region: String) -> Dictionary:
 	var path : String = "res://hot_stuff/" + region + ".json"
-	var file := FileAccess.open(path, FileAccess.READ)
+	var data = GlobalFunctions.load_json_data(path)
 
-	if file == null:
-		push_error("Não foi possível abrir o arquivo: " + path)
-		return {}
-
-	var content := file.get_as_text()
-	var data = JSON.parse_string(content)
-
-	if data == null:
-		push_error("JSON inválido: " + path)
-		return {}
-	
 	return data

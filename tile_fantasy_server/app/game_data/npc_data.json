@@ -1,0 +1,45 @@
+{
+    "Sidewalk Sid":{
+
+    },
+    "Gary Fara" : {
+        "type" : "Item Merchant",
+        "nation" : "steel_nation",
+        "level" : 33,
+        "positionX" : 20,
+        "positionY" : 20,
+        "schedule" : {"start" : "08:00", "end" : "12:00"},
+        "dialog": {
+            "start": {
+                "text": "Greetings adventurer, what brings you here today?",
+                "question" : "Choose an answer:",
+                "choices": [
+                    {
+                        "text": "What do you have for sale?",
+                        "next": "shop"
+                    },
+                    {
+                        "text": "Bye",
+                        "next": "bye"
+                    }
+                ]
+            },
+            "shop": {
+                "text": "I've got plenty of useful items. Take a look!",
+                "next": "after_shop",
+                "action": "open_shop"
+            },
+            "thanks": {
+                "text": "You're welcome, adventurer.",
+                "question" : "Choose an answer:",
+                "next": "bye",
+                "action": "close_shop"
+            },
+            "bye": {
+                "text": "Safe travels!",
+                "question" : "Choose an answer:",
+                "next": "end"
+            }
+        }
+    }
+}

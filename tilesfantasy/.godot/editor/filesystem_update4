@@ -1,9 +1,8 @@
-res://screens/initial_scene.tscn
-res://screens/world_screen/world_screen.gd
-res://screens/world_screen/world_screen.tscn
-res://screens/aux_screens/region_builder/region_builder.tscn
-res://screens/aux_screens/region_builder/region_builder.gd
-res://hot_stuff/region_001.json
-res://base_classes/charactere_sheet.gd
-res://scripts/ServerComms.gd
+res://screens/world_ui/WorldUI.tscn
 res://screens/player_screen/Player.tscn
+res://screens/world_screen/world_screen.tscn
+res://screens/dialog_screen/dialog_screen.tscn
+res://screens/dialog_screen/dialog_screen.gd
+res://screens/aux_screens/battle_button/BattleButton.tscn
+res://scripts/global_functions.gd
+res://screens/world_screen/world_screen.gd
