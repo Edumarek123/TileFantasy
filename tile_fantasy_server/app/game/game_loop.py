@@ -37,27 +37,41 @@ async def game_loop():
         physics_update(delta)
 
         # Send Positions
-        for player in players.values():
-            region = player["r"]
-
-            await player["websocket"].send_json({
-                "type": "positions",
-
-                "players": [
-                    {
-                        "player_id": player_id,
-                        "x": p["x"],
-                        "y": p["y"],
-                        "r": p["r"]
-                    }
-
-                    for player_id, p in players.items()
-                    if p["r"] == region
-                ]
-            })
-
+        await broadcast_positions()
 
         await asyncio.sleep(0.05)
+
+
+async def broadcast_positions():
+
+    # Copia o dicionario: jogadores podem conectar/desconectar durante os awaits
+    snapshot = list(players.items())
+
+    regions: dict = {}
+
+    for player_id, p in snapshot:
+        regions.setdefault(p["r"], []).append({
+            "player_id": player_id,
+            "x": p["x"],
+            "y": p["y"],
+            "r": p["r"]
+        })
+
+    for player_id, player in snapshot:
+
+        try:
+            await player["websocket"].send_json({
+                "type": "positions",
+                "players": regions.get(player["r"], [])
+            })
+
+        except Exception as error:
+
+            # Um socket morto nao pode derrubar o loop de todos
+            print(f"Erro ao enviar para {player_id}: {error}")
+
+            if players.get(player_id) is player:
+                players.pop(player_id, None)
 
 
 #------------#Physics#------------#
@@ -129,7 +143,9 @@ async def save_all_players_positons():
 
     tasks = []
 
-    for player_id, player in players.items():
+    snapshot = list(players.items())
+
+    for player_id, player in snapshot:
 
         tasks.append(
             asyncio.to_thread(
@@ -145,7 +161,7 @@ async def save_all_players_positons():
 
         task_results = await asyncio.gather(*tasks, return_exceptions=True)
 
-        for player_id, result in zip(players.keys(), task_results):
+        for (player_id, _), result in zip(snapshot, task_results):
 
             if isinstance(result, Exception):
 

@@ -4,12 +4,14 @@ import random
 import uuid
 import base64
 
+from app.config.config import DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_DATABASE
+
 #----------------#Credentials#----------------#
-DB_User = "gateway_server1"
-DB_Password = "secret123"
-DB_Host = "host.docker.internal"
-DB_Port = 3306
-DB_Database = "tile_fantasy_db"
+DB_User = DB_USER
+DB_Password = DB_PASSWORD
+DB_Host = DB_HOST
+DB_Port = DB_PORT
+DB_Database = DB_DATABASE
 
 
 #----------------#Base-Functions#----------------#
@@ -66,7 +68,7 @@ def get_player_location_db(player_id : str) -> tuple[float, float, str]:
 
     disconnect_database(conn)
 
-    if len(response) < 1:
+    if not response:
         return(None, None, "")
 
     return response[0]
@@ -101,7 +103,7 @@ def check_credentials_db(username : str, password : str) -> bool:
 
     disconnect_database(conn)
 
-    return len(response) > 0
+    return bool(response)
 
 
 
@@ -113,7 +115,7 @@ def get_player_id_db(username : str) -> str:
 
     disconnect_database(conn)
 
-    if len(response) < 1:
+    if not response:
         return None
 
     return response[0][0]
