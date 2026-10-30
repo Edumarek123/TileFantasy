@@ -1,6 +1,6 @@
 CREATE DATABASE IF NOT EXISTS tile_fantasy_db;
 CREATE USER 'gateway_server1'@'%'
-IDENTIFIED BY 'secret123';
+IDENTIFIED BY 'TROQUE_ESTA_SENHA';
 GRANT ALL PRIVILEGES ON tile_fantasy_db.* TO 'gateway_server1'@'%';
 FLUSH PRIVILEGES;
 USE tile_fantasy_db;
