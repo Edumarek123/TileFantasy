@@ -1,46 +1,91 @@
+<div align="center">
+
 # TileFantasy
 
-A fantasy MMO project built around a persistent open world, four competing nations, turn-based combat, and resource-driven progression.
+**A fantasy MMO concept built around faction conflict, exploration, and a persistent world.**
 
-## Game concept
+![Genre](https://img.shields.io/badge/genre-fantasy%20MMO-6f42c1)
+![Combat](https://img.shields.io/badge/combat-turn--based-0A7F8C)
+![World](https://img.shields.io/badge/world-open%20world-1f6feb)
+![Status](https://img.shields.io/badge/status-in%20development-orange)
 
-Players explore a shared world, fight monsters and other players, develop professions, and compete for Soul Crystals — the central resource used for progression, crafting, and trade.
+</div>
 
-The design combines open-world exploration with turn-based battles. PvP is enabled outside protected city areas, while neutral areas support trade between nations.
+## Overview
 
-## Four nations
+TileFantasy is a fantasy multiplayer role-playing game project built around a shared world, four competing nations, turn-based battles, and a resource-driven progression system.
 
-- **Steel Nation** — mountain valleys and lakes; sword-wielding warriors and blacksmiths.
-- **Arcane Nation** — floating islands; mages and alchemists.
-- **Wall Nation** — an icy frontier; rangers and craftsmen.
-- **Soul Nation** — mysterious forests; creature tamers who fight alongside captured and enhanced companions.
+Players are intended to explore regions, fight monsters and other players, develop professions, trade, and compete for **Soul Crystals** — the central resource used for leveling, crafting, and exchange.
 
-A personality test is intended to determine a player's starting nation. The design also describes a way to change nations after repeated deaths.
+This repository contains design documentation, lore, art and map directories, plus separate client/server project folders. The systems described below represent the project's design; individual features should be considered planned or in progress unless confirmed in the implementation.
 
-## Core systems
+## Core game pillars
 
-- Soul Crystal collection and progression
-- Turn-based combat and open-world PvP
-- Crafting, professions, and player trading
-- Neutral and AI-managed intermediate zones
-- Dynamic monster encounters
-- Nation activities and a weekly global-boss event
-- Character attributes, equipment, and progression statistics
+- **Faction identity:** four nations with distinct environments and combat roles.
+- **World exploration:** open regions, cities, dungeons, and AI-managed intermediate zones.
+- **Turn-based combat:** tactical encounters against monsters and other players.
+- **Resource economy:** Soul Crystals as a shared progression and trade resource.
+- **Player specialization:** professions, equipment, attributes, and crafting.
+- **Faction conflict:** PvP outside protected cities and neutral trade areas.
 
-## Repository structure
+## The four nations
 
-- `game_doc` — gameplay systems and mechanics
-- `lore` — world and nation background
-- `art/` — visual assets
-- `map/` — map-related materials
-- `tile_fantasy_server/` — server-side project
-- `tilesfantasy/` — game client/project materials
-- `todo` — development task list
+| Nation | Environment | Role and profession |
+|---|---|---|
+| Steel Nation | Mountains, valleys, lakes | Sword warriors / blacksmiths |
+| Arcane Nation | Floating islands | Mages / alchemists |
+| Wall Nation | Icy frontier and great wall | Rangers / craftsmen |
+| Soul Nation | Mysterious forests | Creature tamers / enchanters |
 
-## Project status
+Each nation has its own identity, lore, and progression direction. The design also describes a personality-based nation assignment and a nation-change mechanic after repeated deaths.
 
-The repository contains design documentation, lore, assets, and client/server project folders. Features described in the design documents should be considered planned or in development unless confirmed by the implementation.
+## World and activities
 
-## Note
+The design documents describe several types of locations:
 
-This README summarizes the project concept and repository organization; it does not claim that every designed game system is already implemented.
+- **Cities:** training, professions, markets, throne chambers, museums, libraries, and guilds.
+- **Neutral zone:** a protected area intended for trade between nations.
+- **Intermediate zones:** changing regions with monster encounters and resource drops.
+- **Primordial Portal:** the location associated with the planned global-boss event.
+
+## Progression and economy
+
+Soul Crystals are the central resource in the game design. They are intended to support:
+
+- Character progression and leveling
+- Crafting and profession development
+- Player-to-player exchange
+- Creature healing and enhancement in the Soul Nation
+
+Characters are also described with primary attributes such as Strength, Dexterity, Intellect, Vitality, and Soul, which influence derived combat statistics.
+
+## Combat and equipment
+
+The design describes nation-specific combat identities, turn-based actions, weapons, armor, rings, creature companions, and skills. The complete combat balance and implementation status should be checked against the current game code.
+
+## Repository navigation
+
+```text
+.
+├── art/                 # Visual assets
+├── game_doc             # Gameplay systems and mechanics
+├── lore                 # Nation and world background
+├── map/                 # Map-related content
+├── tile_fantasy_server/ # Server-side project
+├── tilesfantasy/        # Client/game project
+└── todo                 # Development roadmap
+```
+
+## Development status
+
+The repository combines design work and software project directories. It should be presented as an in-development game project, not as a released MMO with all documented systems already available.
+
+## Project documentation
+
+- [Gameplay design](game_doc)
+- [World lore](lore)
+- [Development tasks](todo)
+
+## License
+
+No license file was identified in the repository. Contact the author before redistributing or reusing project materials.
